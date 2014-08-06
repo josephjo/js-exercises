@@ -1,4 +1,4 @@
 js-exercises
 ============
 
-JavaScript exercises
+Exercises to learn JavaScript.
