@@ -1,11 +1,11 @@
 // Range function that lists numbers from start arg to end arg
 function range(start, end) {
-    arr = []
+    arr = [];
     for (var i = start; i <= end; i++) {
         arr.push(i);
     }
 
-    return arr
+    return arr;
 }
 
 
@@ -15,13 +15,12 @@ function sum(arr) {
     console.log(arr);
 
     for (var num in arr) {
-        console.log(arr[num])
         sum += Number(arr[num]);
     }
-    return sum
+    return sum;
 }
 
 
 
-console.log(range(1, 10));
+console.log(range(1, 10)); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 console.log(sum(range(1, 10))); // 55
