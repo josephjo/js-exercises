@@ -17,7 +17,6 @@ function range(start, end, step) {
 // Sum function that takes an array of numbers and returns sum
 function sum(arr) {
     var sum = 0;
-    console.log(arr);
 
     for (var num in arr) {
         sum += Number(arr[num]);

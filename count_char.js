@@ -11,5 +11,5 @@ function count_char(str, char) {
     return count;
 }
 
-console.log(count_char("krazyklown", "k")); // 2
-console.log(count_char("zzzzzzzzzzzzzzzzzzz", "a")); // 0
+console.log(count_char('krazyklown', 'k')); // 2
+console.log(count_char('zzzzzzzzzzzzzzzzzzz', 'a')); // 0
