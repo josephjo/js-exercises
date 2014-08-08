@@ -1,12 +1,9 @@
 // Given a list, build a object data structure
 var array_to_list = function(array) {
-    var list = null, container = [];
+    var list = null;
 
     for (item in array.reverse()) {
-        container.push[list = {
-            value: array[item],
-            rest: list
-        }]
+        list = {value: array[item], rest: list};
     }
 
     return list;
