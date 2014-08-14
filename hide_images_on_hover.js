@@ -4,7 +4,6 @@ function hide_images_on_hover() {
 
     for (var i = 0; i < images.length; i++) {
         var image = images[i];
-
         image = image.addEventListener ? image.addEventListener('mouseover', hide, false) : image.attachEvent('mouseenter', hide);
 
     }
