@@ -8,7 +8,7 @@ function reverse_array(arr) {
 // Reverse a given array
 var reverse_array_in_place = function(arr) {
     var new_arr = arr.reverse();
-}
+};
 
 
 

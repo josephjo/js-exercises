@@ -2,7 +2,7 @@
 function array_to_list(array) {
     var list = null;
 
-    for (item in array.reverse()) {
+    for (var item in array.reverse()) {
         list = {value: array[item], rest: list};
     }
 
@@ -15,7 +15,7 @@ function list_to_array(list) {
     var array = [];
 
     for (var node = list; node; node = node.rest) {
-        array.push(node.value)
+        array.push(node.value);
     }
 
     return array;
@@ -30,7 +30,7 @@ function prepend(el, list) {
 
 // Takes a list and a number and returns the element at the given position in the list
 function nth(list, num) {
-    if (num == 0) {
+    if (num === 0) {
         return list.value;
     } else {
         return nth(list.rest, num - 1);

@@ -6,7 +6,7 @@ function count_char(str, char) {
         if (str.charAt(i) === char) {
             count++;
         }
-    };
+    }
 
     return count;
 }
