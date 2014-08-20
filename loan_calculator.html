@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Calculator</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <section>
+        <h1>Loan calculator:</h1>
+        <ul>
+            <li>
+                <label for="amount">Amount of the loan ($):</label>
+                <input type="text" name="amount" id="amount" value="100000" tabindex="1" onfocus="this.value=''; this.onfocus=null;" onchange="calculate();">
+            </li>
+            <li>
+                <label for="interest">Annual interest (%):</label>
+                <input type="text" name="interest" id="interest" value="5" tabindex="2" onfocus="this.value=''; this.onfocus=null;" onchange="calculate();">
+            </li>
+            <li>
+                <label for="period">Repayment period (years):</label>
+                <input type="text" name="period" id="period" value="30" tabindex="3" onfocus="this.value=''; this.onfocus=null;" onchange="calculate();">
+            </li>
+        </ul>
+        <p>
+            Monthly payment:<br>
+            $<span id="payment" class="payment"></span>
+        </p>
+
+        <p>
+            Total payment:<br>
+            $<span id="total" class="total"></span>
+        </p>
+
+        <p>
+            Total interest:<br>
+            $<span id="total_interest"></span>
+        </p>
+    </section>
+</body>
+</html>
