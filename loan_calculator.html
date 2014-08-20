@@ -75,18 +75,46 @@
         </ul>
         <p>
             Monthly payment:<br>
-            $<span id="payment" class="payment"></span>
+            <span id="payment" class="payment"></span>
         </p>
-
         <p>
             Total payment:<br>
-            $<span id="total" class="total"></span>
+            <span id="total" class="total"></span>
         </p>
-
         <p>
             Total interest:<br>
-            $<span id="total_interest"></span>
+            <span id="total_interest"></span>
         </p>
     </section>
+
+    <script type="text/javascript">
+        function calculate() {
+            'use strict';
+            var amount = document.getElementById('amount'),
+                interest = document.getElementById('interest'),
+                period = document.getElementById('period'),
+                payment = document.getElementById('payment'),
+                total = document.getElementById('total'),
+                total_interest = document.getElementById('total_interest'),
+                principal = parseFloat(amount.value),
+                interest_value = parseFloat(interest.value / 100 / 12),
+                payments = parseFloat(period.value * 12),
+                x = Math.pow(1 + interest_value, payments),
+                monthly = (principal * x * interest_value) / (x-1);
+
+            if (isFinite(monthly)) {
+                // Fill in all fields, rounding to 2 decimal places
+                payment.innerHTML = '$' + monthly.toFixed(2);
+                total.innerHTML = '$' + (monthly * payments).toFixed(2);
+                total_interest.innerHTML = '$' + ((monthly*payments)-principal).toFixed(2);
+            } else {
+                payment.innerHTML = 'Error with input';
+                total.innerHTML = 'Error with input';
+                total_interest.innerHTML = 'Error with input';
+            }
+        }
+
+        calculate();
+    </script>
 </body>
 </html>
