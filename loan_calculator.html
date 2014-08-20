@@ -49,6 +49,10 @@
           padding: 3px 0 3px 3px;
         }
 
+        span {
+            font-weight: normal;
+        }
+
         input:focus {
           border: 1px solid rgba(81, 203, 238, 1);
           box-shadow: 0 0 5px rgba(81, 203, 238, 1);
@@ -108,6 +112,7 @@
                 total.innerHTML = '$' + (monthly * payments).toFixed(2);
                 total_interest.innerHTML = '$' + ((monthly*payments)-principal).toFixed(2);
             } else {
+                // If input is not valid, show message
                 payment.innerHTML = 'Error with input';
                 total.innerHTML = 'Error with input';
                 total_interest.innerHTML = 'Error with input';
