@@ -105,6 +105,15 @@
             };
         }
 
+        function clear_form() {
+            'use strict';
+
+            input_val.onfocus = function() {
+                this.value='';
+                this.onfocus = null;
+            };
+        }
+
         function calc() {
             'use strict';
             var amount = document.getElementById('amount'),
