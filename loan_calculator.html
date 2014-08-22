@@ -66,15 +66,15 @@
         <ul>
             <li>
                 <label for="amount">Amount of the loan ($):</label>
-                <input type="text" name="amount" id="amount" value="100000" tabindex="1" onfocus="this.value=''; this.onfocus=null;" onchange="calculate();">
+                <input type="text" name="amount" id="amount" value="100000" tabindex="1" onfocus="this.value=''; this.onfocus=null;" onchange="calc();">
             </li>
             <li>
                 <label for="interest">Annual interest (%):</label>
-                <input type="text" name="interest" id="interest" value="5" tabindex="2" onfocus="this.value=''; this.onfocus=null;" onchange="calculate();">
+                <input type="text" name="interest" id="interest" value="5" tabindex="2" onfocus="this.value=''; this.onfocus=null;" onchange="calc();">
             </li>
             <li>
                 <label for="period">Repayment period (years):</label>
-                <input type="text" name="period" id="period" value="30" tabindex="3" onfocus="this.value=''; this.onfocus=null;" onchange="calculate();">
+                <input type="text" name="period" id="period" value="30" tabindex="3" onfocus="this.value=''; this.onfocus=null;" onchange="calc();">
             </li>
         </ul>
         <p>
@@ -92,7 +92,7 @@
     </section>
 
     <script type="text/javascript">
-        function calculate() {
+        function calc() {
             'use strict';
             var amount = document.getElementById('amount'),
                 interest = document.getElementById('interest'),
@@ -119,7 +119,7 @@
             }
         }
 
-        calculate();
+        calc();
     </script>
 </body>
 </html>
