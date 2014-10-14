@@ -48,4 +48,16 @@ function zodiac(year) {
 }
 
 
+zodiac(1920);
+zodiac(1921);
+zodiac(1922);
+zodiac(1923);
+zodiac(1924);
+zodiac(1925);
+zodiac(1926);
 zodiac(1927);
+zodiac(1928);
+zodiac(1929);
+zodiac(1930);
+zodiac(1931);
+zodiac(1932);
