@@ -5,5 +5,22 @@
     <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 </head>
 <body>
+<script>
+    // Grab a random word from randomword.setgetgo.com
+    var random_generator = function() {
+        var random_url = 'http://randomword.setgetgo.com/get.php';
+
+        $.ajax({
+            type: 'GET',
+            url: random_url,
+            dataType: 'jsonp',
+            jsonpCallback: 'rand'
+        }).done(function(data) {
+            console.log(data.Word);
+        });
+    };
+
+    random_generator();
+</script>
 </body>
 </html>
