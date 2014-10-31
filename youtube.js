@@ -1,6 +1,7 @@
 // Watch a YouTube video without logging in by inserting "/v" after hostname
 (function() {
-    if (window.location.hostname === "www.youtube.com") {
-        window.location.href = window.location.origin + "/v" + window.location.pathname + window.location.search;
+    var url = window.location;
+    if (url.hostname === "www.youtube.com") {
+        url.href = url.origin + "/v" + url.pathname + url.search;
     }
 })();
