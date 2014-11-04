@@ -56,7 +56,7 @@
                     url = base_search + rand;
                     open_window = window.open(url, '_blank');
                     times_run++;
-                    $('#results').append('<p>#' + times_run + '. URL: ' + url + '<br></p>');
+                    $('#results').append('<p>#' + times_run + '. URL: ' + '<a href="' + url + '">' + url + '</a><br></p>');
                     console.log('Number of results: ' + times_run + '. URL: ' + url);
 
                     // Stop interval after a given time
