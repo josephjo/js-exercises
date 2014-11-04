@@ -56,7 +56,7 @@
                     url = base_search + rand;
                     open_window = window.open(url, '_blank');
                     times_run++;
-                    $('#results').append(times_run);
+                    $('#results').append('<p>#' + times_run + '<br></p>');
                     console.log('Number of results: ' + times_run + '. URL: ' + url);
 
                     // Stop interval after a given time
@@ -67,7 +67,7 @@
             }, delay * 1000);
         }
 
-        bing_search(20, 5);
+        bing_search(4, 1);
     </script>
 </body>
 </html>
