@@ -13,8 +13,11 @@
         (function() {
             var char = '',
                 article = $('article'),
-                chars,
-                text;
+                chars = 'abcdefghijklmnopqrstuvwxyz',
+                text = article.text().replace(/[A-z|0-9]/g, function() {
+                    char = chars.charAt(Math.floor(Math.random() * chars.length));
+                    return char;
+                });
 
             article.text(text);
         })();
