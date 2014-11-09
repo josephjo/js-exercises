@@ -42,7 +42,10 @@
             });
         };
 
-        var num_random_gen = function() {};
+        // Random 1-3 sec delay
+        var num_random_gen = function() {
+            return Math.round(Math.random() * (3 - 1) + 1);
+        };
 
         // Executes a search on the Bing search engine a given number of times
         // delayed by a given number of seconds
