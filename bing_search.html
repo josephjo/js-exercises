@@ -29,7 +29,7 @@
         var rand = '';
 
         // Grab a random word from randomword.setgetgo.com
-        var random_generator = function() {
+        var word_random_gen = function() {
             var random_url = 'http://randomword.setgetgo.com/get.php';
 
             $.ajax({
@@ -42,6 +42,8 @@
             });
         };
 
+        var num_random_gen = function() {};
+
         // Executes a search on the Bing search engine a given number of times
         // delayed by a given number of seconds
         function bing_search(num, delay) {
@@ -51,7 +53,7 @@
                 open_window;
 
             var interval = setInterval(function() {
-                random_generator();
+                word_random_gen();
 
                 setTimeout(function() {
                     url = base_search + rand;
