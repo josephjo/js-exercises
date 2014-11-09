@@ -50,7 +50,7 @@
         // Executes a search on the Bing search engine a given number of times
         // delayed by a given number of seconds
         function bing_search(num, delay) {
-            delay -= delay;
+            delay -= 1;
 
             var base_search = 'https://www.bing.com/search?setmkt=en-US&q=',
                 times_run = 0,
@@ -62,7 +62,7 @@
 
                 setTimeout(function() {
                     url = base_search + rand;
-                    open_window = window.open(url, '_blank');
+                    // open_window = window.open(url, '_blank');
                     times_run++;
                     $('#results').append('<p>#' + times_run + '. URL: ' + '<a href="' + url + '">' + url + '</a><br></p>');
                     console.log('Number of results: ' + times_run + '. URL: ' + url);
