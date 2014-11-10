@@ -47,35 +47,38 @@
             return Math.round(Math.random() * (3 - 1) + 1);
         };
 
-        // Executes a search on the Bing search engine a given number of times
+        // Executes a search on the Bing search engine
         // delayed by a given number of seconds
-        function bing_search(num, delay) {
-            delay -= 1;
+        function bing_search(delay) {
+            var num = parseInt(prompt('Number of searches:', '30'));
+            if (num !== null && num > 0) {
+                delay -= 1;
 
-            var base_search = 'https://www.bing.com/search?setmkt=en-US&q=',
-                times_run = 0,
-                url = '',
-                open_window;
+                var base_search = 'https://www.bing.com/search?setmkt=en-US&q=',
+                    times_run = 0,
+                    url = '',
+                    open_window;
 
-            var interval = setInterval(function() {
-                word_random_gen();
+                var interval = setInterval(function() {
+                    word_random_gen();
 
-                setTimeout(function() {
-                    url = base_search + rand;
-                    open_window = window.open(url, '_blank');
-                    times_run++;
-                    $('#results').append('<p>#' + times_run + '. URL: ' + '<a href="' + url + '">' + url + '</a><br></p>');
-                    console.log('Number of results: ' + times_run + '. URL: ' + url);
+                    setTimeout(function() {
+                        url = base_search + rand;
+                        open_window = window.open(url, '_blank');
+                        times_run++;
+                        $('#results').append('<p>#' + times_run + '. URL: ' + '<a href="' + url + '">' + url + '</a><br></p>');
+                        console.log('Number of results: ' + times_run + '. URL: ' + url);
 
-                    // Stop interval after a given time
-                    if (times_run === num) {
-                        clearInterval(interval);
-                    }
-                }, 1000);
-            }, (delay + num_random_gen()) * 1000);
+                        // Stop interval after a given time
+                        if (times_run === num) {
+                            clearInterval(interval);
+                        }
+                    }, 1000);
+                }, (delay + num_random_gen()) * 1000);
+            }
         }
 
-        bing_search(30, 8);
+        bing_search(8);
     </script>
 </body>
 </html>
