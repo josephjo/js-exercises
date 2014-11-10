@@ -26,41 +26,38 @@
         <div id="results"></div>
     </section>
     <script>
-        var rand = '';
-
-        // Grab a random word from randomword.setgetgo.com
-        var word_random_gen = function() {
-            var random_url = 'http://randomword.setgetgo.com/get.php';
-
-            $.ajax({
-                type: 'GET',
-                url: random_url,
-                dataType: 'jsonp',
-                jsonpCallback: 'rand'
-            }).done(function(data) {
-                rand = data.Word;
-            });
-        };
-
-        // Random 1-3 sec delay
-        var num_random_gen = function() {
-            return Math.round(Math.random() * (3 - 1) + 1);
-        };
+        var rand = '',
+            random_url = 'http://randomword.setgetgo.com/get.php',
+            // Grab a random word
+            rand_word_gen = function() {
+                $.ajax({
+                    type: 'GET',
+                    url: random_url,
+                    dataType: 'jsonp',
+                    jsonpCallback: 'rand'
+                }).done(function(data) {
+                    rand = data.Word;
+                });
+            },
+            // Random 1-3 sec delay
+            rand_num_gen = function() {
+                return Math.round(Math.random() * (4 - 1) + 1);
+            };
 
         // Executes a search on the Bing search engine
         // delayed by a given number of seconds
         function bing_search(delay) {
-            var num = parseInt(prompt('Number of searches:', '30'));
+            var num = parseInt(prompt('Number of searches:', '30')),
+                base_search = 'https://www.bing.com/search?q=',
+                times_run = 0,
+                url = '',
+                open_window;
+
             if (num !== null && num > 0) {
                 delay -= 1;
 
-                var base_search = 'https://www.bing.com/search?q=',
-                    times_run = 0,
-                    url = '',
-                    open_window;
-
                 var interval = setInterval(function() {
-                    word_random_gen();
+                    rand_word_gen();
 
                     setTimeout(function() {
                         url = base_search + rand;
@@ -74,7 +71,7 @@
                             clearInterval(interval);
                         }
                     }, 1000);
-                }, (delay + num_random_gen()) * 1000);
+                }, (delay + rand_num_gen()) * 1000);
             }
         }
 
