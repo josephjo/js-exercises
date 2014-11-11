@@ -46,10 +46,18 @@
             // Random 1-3 sec delay
             rand_num_gen = function() {
                 return Math.round(Math.random() * (4 - 1) + 1);
+            },
+            // Create the search URL, open in new window, and append results
+            gen_links = function() {
+                url = base_search + rand;
+                // open_window = window.open(url, '_blank');
+                times_run++;
+                $('#results').append('<p>#' + times_run + '. URL: ' + '<a href="' + url + '">' + url + '</a><br></p>');
+                console.log('Number of results: ' + times_run + '. URL: ' + url);
             };
 
-        // Executes a search on the Bing search engine
-        // delayed by a given number of seconds
+        // Executes a random search on the Bing search engine
+        // given a number of searches and the amount of delay
         function bing_search() {
             // TODO: make num and delay a input box instead
             var num = parseInt(prompt('Number of searches:', '30')),
@@ -57,16 +65,17 @@
 
             if (num !== null && num > 0) {
                 delay -= 1;
+                rand_word_gen();
+
+                setTimeout(function() {
+                    gen_links();
+                }, 1000);
 
                 var interval = setInterval(function() {
                     rand_word_gen();
 
                     setTimeout(function() {
-                        url = base_search + rand;
-                        open_window = window.open(url, '_blank');
-                        times_run++;
-                        $('#results').append('<p>#' + times_run + '. URL: ' + '<a href="' + url + '">' + url + '</a><br></p>');
-                        console.log('Number of results: ' + times_run + '. URL: ' + url);
+                        gen_links();
 
                         // Stop interval after a given time
                         if (times_run === num) {
