@@ -50,10 +50,10 @@
 
         // Executes a search on the Bing search engine
         // delayed by a given number of seconds
-        function bing_search(delay) {
-            // TODO: make this a input box instead
+        function bing_search() {
+            // TODO: make num and delay a input box instead
             var num = parseInt(prompt('Number of searches:', '30')),
-                base_search = 'https://www.bing.com/search?q=';
+                delay = parseInt(prompt('Amount of delay in seconds:', '5'));
 
             if (num !== null && num > 0) {
                 delay -= 1;
@@ -77,7 +77,7 @@
             }
         }
 
-        bing_search(8);
+        bing_search();
     </script>
 </body>
 </html>
