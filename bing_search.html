@@ -28,6 +28,10 @@
     <script>
         var rand = '',
             random_url = 'http://randomword.setgetgo.com/get.php',
+            base_search = 'https://www.bing.com/search?q=',
+            times_run = 0,
+            url = '',
+            open_window,
             // Grab a random word
             rand_word_gen = function() {
                 $.ajax({
@@ -49,10 +53,7 @@
         function bing_search(delay) {
             // TODO: make this a input box instead
             var num = parseInt(prompt('Number of searches:', '30')),
-                base_search = 'https://www.bing.com/search?q=',
-                times_run = 0,
-                url = '',
-                open_window;
+                base_search = 'https://www.bing.com/search?q=';
 
             if (num !== null && num > 0) {
                 delay -= 1;
