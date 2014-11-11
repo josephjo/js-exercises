@@ -50,7 +50,7 @@
             // Create the search URL, open in new window, and append results
             gen_links = function() {
                 url = base_search + rand;
-                // open_window = window.open(url, '_blank');
+                open_window = window.open(url, '_blank');
                 times_run++;
                 $('#results').append('<p>#' + times_run + '. URL: ' + '<a href="' + url + '">' + url + '</a><br></p>');
                 console.log('Number of results: ' + times_run + '. URL: ' + url);
@@ -69,7 +69,7 @@
 
                 setTimeout(function() {
                     gen_links();
-                }, 1000);
+                }, 500);
 
                 var interval = setInterval(function() {
                     rand_word_gen();
@@ -81,7 +81,7 @@
                         if (times_run === num) {
                             clearInterval(interval);
                         }
-                    }, 1000);
+                    }, 500);
                 }, (delay + rand_num_gen()) * 1000);
             }
         }
