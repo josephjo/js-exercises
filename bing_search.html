@@ -22,7 +22,12 @@
 </head>
 <body>
     <section>
-        <h1>Bing Search:</h1>
+        <h1>Bing Search:</h1><br>
+        <form>
+            <p><label for="number">Number: </label><input type="text" name="number" id="number" value="30"></p>
+            <p><label for="delay">Delay: </label><input type="text" name="delay" id="delay"value="5"></p>
+            <p><input type="submit" value="Submit"></p><br>
+        </form>
         <div id="results"></div>
     </section>
     <script>
@@ -59,9 +64,9 @@
         // Executes a random search on the Bing search engine
         // given a number of searches and the amount of delay
         function bing_search() {
-            // TODO: make num and delay a input box instead
-            var num = parseInt(prompt('Number of searches:', '30')),
-                delay = parseInt(prompt('Amount of delay in seconds:', '5'));
+            var data = $('form').serializeArray(),
+                num = parseInt(data[0].value),
+                delay = parseInt(data[1].value);
 
             if (num !== null && num > 0) {
                 delay -= 1;
@@ -86,7 +91,10 @@
             }
         }
 
-        bing_search();
+        $('form').submit(function(e) {
+          bing_search();
+          e.preventDefault();
+        });
     </script>
 </body>
 </html>
