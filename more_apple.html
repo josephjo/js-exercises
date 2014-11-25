@@ -10,4 +10,13 @@
 
         <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     </body>
+
+    <script>
+        $(document).ready(function() {
+            $('body *:contains("Apple")').each(function() {
+                var moreApple = $(this).html().replace(/Apple/g, '\uf8ff');
+                $(this).html(moreApple);
+            });
+        });
+    </script>
 </html>
