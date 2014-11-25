@@ -16,13 +16,13 @@ function range(start, end, step) {
 
 // Sum function that takes an array of numbers and returns sum
 function sum(arr) {
-    var sum = 0;
+    var total = 0;
 
     for (var num in arr) {
-        sum += Number(arr[num]);
+        total += Number(arr[num]);
     }
 
-    return sum;
+    return total;
 }
 
 
