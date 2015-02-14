@@ -15,4 +15,4 @@ var number_game = function(num) {
     }
 }
 
-console.log(number_game());
+console.log(number_game(5));
