@@ -1,14 +1,13 @@
 // Calculate cost per mile for miles needed for a free flight minus any fees
-function calc_air_miles() {
-    var cost = prompt("Amount you would pay for the flight: $"),
-        miles = prompt("Amount of miles it costs: "),
-        fees = prompt("Amount of fees associated with redeeming with miles: $"),
-        total;
+const calc_air_miles = () => { 
+    const format = (num) => Number(num.replace(/[^0-9\.]+/g,""));
 
-    total = ((cost - fees) / miles) * 100;
+    const cost = prompt("Amount you would pay for the flight: $");
+    const miles = prompt("Amount of miles it costs: ");
+    const fees = prompt("Amount of fees associated with redeeming with miles: $");
+    const total = ((format(cost) - format(fees)) / format(miles)) * 100;
 
-    return "You're getting " + total.toFixed(2) + " cents per mile for a $" + cost + " ticket.";
+    return `You're getting ${total.toFixed(2)} cents per mile for a ${cost} ticket.`;
 }
 
-
-console.log(calc_air_miles());
+calc_air_miles();
